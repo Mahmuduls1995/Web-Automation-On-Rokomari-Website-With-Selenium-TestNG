@@ -53,6 +53,28 @@ public class WriterTest extends BaseDriver {
         scrollDown.ScrollDownToCategorySection();
     }
 
+    @Test(priority = 4)
+    public void ClickFirstCategory() throws IOException{
+        childTest = parentTest.createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Click the first category</b></p>");
+        WriterPage clickFirstCategory = new WriterPage(childTest);
+        clickFirstCategory.FirstCategoryCheckBoxClick();
+    }
+
+    @Test(priority = 5)
+    public void AgainScrollDown() throws IOException{
+        childTest = parentTest.createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Scroll Down To The Category Section</b></p>");
+        WriterPage scrollDown = new WriterPage(childTest);
+        scrollDown.ScrollDownToCategorySection();
+    }
+
+    @Test(priority = 6)
+    public void ClickSecondCategory() throws IOException{
+        childTest = parentTest.createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Click the Second category</b></p>");
+        WriterPage clickSecondCategory = new WriterPage(childTest);
+        clickSecondCategory.SecondCategoryCheckBoxClick();
+    }
+
+
     @AfterClass
     public void afterClass(){
         report.flush();

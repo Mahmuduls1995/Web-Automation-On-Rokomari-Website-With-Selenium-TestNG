@@ -34,12 +34,12 @@ public class WriterPage extends CommonMethods {
     @FindBy(xpath = "//div[@class='product-sort__content p-0']")
     public WebElement Categories_Ids;
 
-//    @FindBy(xpath = "//label[contains(text(),'পশ্চিমবঙ্গের বই: শিশু-কিশোর বই')]")
-//    public WebElement FilterCheckBox_1;
-//
-//    @FindBy(xpath = "//label[contains(text(),'শিশু-কিশোর: রহস্য, গোয়েন্দা, ভৌতিক, থ্রিলার ও অ্যা')]")
-//    public WebElement FilterCheckBox_2;
-//
+    @FindBy(xpath = "//label[contains(text(),'সমকালীন উপন্যাস')]")
+    public WebElement FilterCheckBox_1;
+
+    @FindBy(xpath = "//label[contains(text(),'শিশু-কিশোর: রহস্য, গোয়েন্দা, ভৌতিক, থ্রিলার ও অ্যা')]")
+    public WebElement FilterCheckBox_2;
+
 //
 //    @FindBy(xpath = "//a[contains(text(),'Next')]")
 //    public WebElement satyajitRayNextPage;
@@ -119,7 +119,6 @@ public class WriterPage extends CommonMethods {
         sleep();
     }
 
-
     public void ScrollDownToCategorySection() throws IOException{
         test.info("Scrolling");
         try {
@@ -135,6 +134,35 @@ public class WriterPage extends CommonMethods {
         sleep();
     }
 
+    public void FirstCategoryCheckBoxClick() throws IOException{
+        test.info("Click On First Category Filtering CheckBox");
+        try {
+            if (FilterCheckBox_1.isDisplayed()) {
+                FilterCheckBox_1.click();
+                passCase("<p style=\"color:green; font-size:13px\"><b>First Category CheckBox Filtering Pass</b></p>");
+                sleep();
+            }
+
+        } catch (Exception e) {
+            failCase("<p style=\"color:red; font-size:13px\"><b>First Category CheckBox Not Locatable</b></p>", "FirstCategoryCheckBoxClickFail");
+        }
+        sleep();
+    }
+
+    public void SecondCategoryCheckBoxClick() throws IOException{
+        test.info("Scrolling");
+        try {
+            if (FilterCheckBox_2.isDisplayed()) {
+                FilterCheckBox_2.click();
+                passCase("<p style=\"color:green; font-size:13px\"><b>Second Category CheckBox Filtering Pass</b></p>");
+                sleep();
+            }
+
+        } catch (Exception e) {
+            failCase("<p style=\"color:red; font-size:13px\"><b>Second Category CheckBox Not Locatable</b></p>", "SecondCategoryCheckBoxClickFail");
+        }
+        sleep();
+    }
 
 
 }
