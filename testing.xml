@@ -3,7 +3,8 @@
 <suite name="RokomariWebAutomation">
     <test name="Test">
         <classes>
-            <class name="com.mahmudul.hasan.tests.HomePageTest"/>
+<!--            <class name="com.mahmudul.hasan.tests.HomePageTest"/>-->
+            <class name="com.mahmudul.hasan.tests.WriterTest"/>
 
         </classes>
     </test>

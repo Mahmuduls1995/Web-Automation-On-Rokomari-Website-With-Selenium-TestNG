@@ -9,7 +9,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 public class BaseDriver {
-    public static String Url = "https://www.rokomari.com/book";
+    public static String Url = "https://www.rokomari.com";
     public static WebDriver driver;
 
 

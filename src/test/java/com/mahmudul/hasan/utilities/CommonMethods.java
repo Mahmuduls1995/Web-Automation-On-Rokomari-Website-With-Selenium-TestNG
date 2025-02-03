@@ -16,7 +16,7 @@ public class CommonMethods extends BaseDriver {
     /*************************
      * Wait Utilities *
      *************************/
-    private final WebDriverWait wait = new WebDriverWait(PageDriver.getCurrentDriver(), Duration.ofSeconds(30));
+    private final WebDriverWait wait = new WebDriverWait(PageDriver.getCurrentDriver(), Duration.ofSeconds(5));
 
     /*************************
      * Page Utilities *
@@ -24,7 +24,7 @@ public class CommonMethods extends BaseDriver {
     // create sleep method for 2000 milliseconds
     public void sleep() {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -195,6 +195,13 @@ public class CommonMethods extends BaseDriver {
     public void highlightElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) PageDriver.getCurrentDriver();
         js.executeScript("arguments[0].style.border='3px solid red'", element);
+    }
+
+
+    public void hover(WebElement element) {
+        Actions action = new Actions(PageDriver.getCurrentDriver());
+        action.moveToElement(element).perform();
+        sleep();
     }
 
 }
