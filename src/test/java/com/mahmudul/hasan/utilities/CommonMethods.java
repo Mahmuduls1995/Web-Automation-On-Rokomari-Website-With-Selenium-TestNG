@@ -24,7 +24,7 @@ public class CommonMethods extends BaseDriver {
     // create sleep method for 2000 milliseconds
     public void sleep() {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

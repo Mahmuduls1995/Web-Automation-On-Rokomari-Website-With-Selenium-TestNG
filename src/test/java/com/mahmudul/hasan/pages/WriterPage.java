@@ -34,21 +34,20 @@ public class WriterPage extends CommonMethods {
     @FindBy(xpath = "//div[@class='product-sort__content p-0']")
     public WebElement Categories_Ids;
 
+    @FindBy(xpath = "//div[contains(@class, 'pagination')]")
+    public WebElement ScrollToPagination;
+
     @FindBy(xpath = "//label[contains(text(),'সমকালীন উপন্যাস')]")
     public WebElement FilterCheckBox_1;
 
     @FindBy(xpath = "//label[contains(text(),'শিশু-কিশোর: রহস্য, গোয়েন্দা, ভৌতিক, থ্রিলার ও অ্যা')]")
     public WebElement FilterCheckBox_2;
 
-//
-//    @FindBy(xpath = "//a[contains(text(),'Next')]")
-//    public WebElement satyajitRayNextPage;
-//
-//    @FindBy(xpath = "//a[contains(text(),'Previous')]")
-//    public WebElement satyajitRayPreviousPage;
-//
-//    @FindBy(xpath = "//h1[contains(text(),'সত্যজিৎ রায় এর বই সমূহ')]")
-//    public WebElement SelectBookDiv;
+    @FindBy(xpath = "//a[@href='/book/author/1/humayun-ahmed?ref=mm_p0&page=2']")
+    public WebElement BookNextPage;
+
+    @FindBy(xpath = "//h1[contains(text(),'হুমায়ূন আহমেদ এর বই সমূহ')]")
+    public WebElement SelectBookDiv;
 
 
     public void passCase(String message) {
@@ -163,6 +162,51 @@ public class WriterPage extends CommonMethods {
         }
         sleep();
     }
+
+    public void ScrollDownToPagination() throws IOException{
+        test.info("Scrolling To Pagination");
+        try {
+            if (ScrollToPagination.isDisplayed()) {
+                scrollToElement(ScrollToPagination);
+                sleep();
+                passCase("<p style=\"color:green; font-size:13px\"><b>scrolling Success</b></p>");
+            }
+
+        } catch (Exception e) {
+            failCase("<p style=\"color:red; font-size:13px\"><b>scrolling Fail</b></p>", "ScrollingFail");
+        }
+        sleep();
+    }
+
+    public void SelectBookDivScroll() throws IOException {
+        test.info("To BookList Div Scrolling");
+        try {
+            scrollToElement(SelectBookDiv);
+            passCase("<p style=\"color:green; font-size:13px\"><b>BookList Div Scrolling Pass</b></p>");
+            sleep();
+
+        } catch (Exception e) {
+            failCase("<p style=\"color:red; font-size:13px\"><b>BookList Div Scrolling Fail</b></p>", "SelectBookDivScrollFail");
+        }
+        sleep();
+
+    }
+
+//    public void ClickOnNextPage() throws IOException{
+//        test.info("Click On Next Page");
+//        try {
+//            if (BookNextPage.isDisplayed()) {
+//                sleep();
+//                BookNextPage.click();
+//                passCase("<p style=\"color:green; font-size:13px\"><b>Next Page Clicked</b></p>");
+//                sleep();
+//            }
+//
+//        } catch (Exception e) {
+//            failCase("<p style=\"color:red; font-size:13px\"><b>Next Page Not Locatable</b></p>", "NextPageClickFail");
+//        }
+//        sleep();
+//    }
 
 
 }

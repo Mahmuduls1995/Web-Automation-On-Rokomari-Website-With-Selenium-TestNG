@@ -38,13 +38,13 @@ public class WriterTest extends BaseDriver {
         WriterPage selectWriterName = new WriterPage(childTest);
         selectWriterName.WriterSelected();
     }
+
     @Test(priority = 2)
     public void BestSellerFilterClick() throws IOException{
         childTest = parentTest.createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Click On Best Seller Option</b></p>");
         WriterPage bestSellerBook = new WriterPage(childTest);
         bestSellerBook.BestSellerFilterClick();
     }
-
 
     @Test(priority = 3)
     public void ScrollDown() throws IOException{
@@ -73,6 +73,30 @@ public class WriterTest extends BaseDriver {
         WriterPage clickSecondCategory = new WriterPage(childTest);
         clickSecondCategory.SecondCategoryCheckBoxClick();
     }
+
+
+    @Test(priority = 7)
+    public void ScrollDownToPagination() throws IOException{
+        childTest = parentTest.createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Scroll Down To The Category Section</b></p>");
+        WriterPage scrollDownPage = new WriterPage(childTest);
+        scrollDownPage.ScrollDownToPagination();
+    }
+
+
+//   @Test(priority = 8)
+//   public void ClickOnNextPage() throws IOException {
+//       childTest = parentTest.createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Click On Next Page</b></p>");
+//       WriterPage bookNextPage = new WriterPage(childTest);
+//       bookNextPage.ClickOnNextPage();
+//   }
+
+    @Test(priority = 8)
+    public void SelectBookDivScroll() throws IOException {
+        childTest = parentTest.createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Select book list section</b></p>");
+        WriterPage SelectBookDivScroll = new WriterPage(childTest);
+        SelectBookDivScroll.SelectBookDivScroll();
+    }
+
 
 
     @AfterClass
