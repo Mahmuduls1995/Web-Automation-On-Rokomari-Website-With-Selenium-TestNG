@@ -30,6 +30,14 @@ public class CommonMethods extends BaseDriver {
         }
     }
 
+    public void sleep(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public String getCurrentPageUrl() {
         return PageDriver.getCurrentDriver().getCurrentUrl();
     }
@@ -203,5 +211,13 @@ public class CommonMethods extends BaseDriver {
         action.moveToElement(element).perform();
         sleep();
     }
+
+
+    public void sendText(WebElement element, String text) {
+        element.clear();
+        element.sendKeys(text);
+    }
+
+
 
 }

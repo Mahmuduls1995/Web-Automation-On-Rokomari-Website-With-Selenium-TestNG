@@ -5,7 +5,9 @@
         <classes>
 <!--            <class name="com.mahmudul.hasan.tests.HomePageTest"/>-->
 <!--            <class name="com.mahmudul.hasan.tests.WriterTest"/>-->
-            <class name="com.mahmudul.hasan.tests.AddToCartTest"/>
+<!--            <class name="com.mahmudul.hasan.tests.AddToCartTest"/>-->
+            <class name="com.mahmudul.hasan.tests.ShippingInfoTest"/>
+
         </classes>
     </test>
 </suite>
