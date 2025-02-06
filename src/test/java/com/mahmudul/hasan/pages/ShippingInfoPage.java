@@ -45,14 +45,15 @@ public class ShippingInfoPage extends CommonMethods {
     @FindBy(xpath = "//fieldset//textarea[@name=\"address\"]")
     public WebElement Address;
 
-    @FindBy(xpath = "//input[@id='bkash']")
+    @FindBy(xpath = "//label[@for='B_KASH']//img[@alt='Pay by Bkash']")
     public WebElement ClickOnBkashCheckBox;
 
-    @FindBy(xpath = "//label[contains(text(),'এই শর্তগুলো মেনে অর্ডার প্রদান করছি।')]")
+//    @FindBy(xpath = "//label[contains(text(), 'রকমারির শর্তাবলীতে সম্মতি প্রদান করছি ৷')]")
+    @FindBy(xpath = "//label[@for='js--terms-checkbox']")
     public WebElement ClickOnTerm;
 
-//    @FindBy(xpath = "//button[@id='js--confirm-order']")
-//    public WebElement ConFirmOrderButton;
+    @FindBy(xpath = "//button[@id='js--confirm-order']")
+    public WebElement ConFirmOrderButton;
 
     public void passCase(String message) {
         test.pass("<p style=\"color:#85BC63; font-size:13px\"><b>" + message + "</b></p>");
@@ -109,6 +110,150 @@ public class ShippingInfoPage extends CommonMethods {
             failCase("Phone Number not locateable", "PhoneNumberFail");
         }
     }
+
+    public void AlternativePhoneNumberGiven() throws IOException {
+        test.info("Giving Alternative Phone Number");
+        try {
+            if (AlternativePhoneNum.isDisplayed()) {
+                AlternativePhoneNum.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+                sendText(AlternativePhoneNum, "01700000000");
+                sleep();
+                passCase("Alternative Phone Number Given");
+            }
+
+        } catch (Exception e) {
+            failCase("Alternative Phone Number not locateable", "AlternativePhoneNumberFail");
+        }
+    }
+
+    public void CountrySelected() throws IOException {
+        test.info("Selecting Country");
+        try {
+            if (CountryDropDown.isDisplayed()) {
+                CountryDropDown.click();
+                selectItemByIndex(CountryDropDown, 0);
+                sleep();
+                passCase("Country Selected");
+            }
+
+        } catch (Exception e) {
+            failCase("Country not locateable", "CountryFail");
+        }
+    }
+
+    public void CityDropDown() throws IOException {
+        test.info("Selecting City");
+        try {
+            if (CityDropDown.isDisplayed()) {
+                CityDropDown.click();
+                selectItemByIndex(CityDropDown, 8);
+                sleep();
+                passCase("City Selected");
+            }
+
+        } catch (Exception e) {
+            failCase("City not locateable", "CityFail");
+        }
+    }
+
+    public void AreaDropDown() throws IOException {
+        test.info("Selecting Area");
+        try {
+            if (AreaDropDown.isDisplayed()) {
+                AreaDropDown.click();
+                selectItemByIndex(AreaDropDown, 5);
+                sleep();
+                passCase("Area Selected");
+            }
+
+        } catch (Exception e) {
+            failCase("Area not locateable", "AreaFail");
+        }
+    }
+
+    public void ZoneDropDown() throws IOException {
+        test.info("Selecting Zone");
+        try {
+            if (ZoneDropDown.isDisplayed()) {
+                ZoneDropDown.click();
+                selectItemByIndex(ZoneDropDown, 5);
+                sleep();
+                passCase("Zone Selected");
+            }
+
+        } catch (Exception e) {
+            failCase("Zone not locateable", "ZoneFail");
+        }
+    }
+
+    public void AddressInputField() throws IOException {
+        test.info("Input Address");
+        try {
+            if (Address.isDisplayed()) {
+                Address.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+                sendText(Address, "Beside debidwar, Upazila: Debidwar, District: Comilla");
+                sleep();
+                passCase("Address Given");
+            }
+
+        } catch (Exception e) {
+            failCase("Address not locateable", "AddressFail");
+        }
+    }
+
+    public void ClickOnBkashCheckBox() throws IOException {
+        test.info("Click On Bkash CheckBox");
+        try {
+            if (ClickOnBkashCheckBox.isDisplayed()) {
+                ClickOnBkashCheckBox.click();
+                sleep();
+                passCase("Bkash CheckBox Clicked");
+            }
+
+        } catch (Exception e) {
+            failCase("Bkash CheckBox not locateable", "BkashCheckBoxFail");
+        }
+    }
+
+private boolean isTermClicked = true;
+public void ClickOnTerm() throws IOException {
+    test.info("Click On Term CheckBox");
+    try {
+        if (ClickOnTerm.isDisplayed() && !isTermClicked) {
+            ClickOnTerm.click();
+            isTermClicked = true;
+            sleep();
+            passCase("Term CheckBox Clicked");
+        } else {
+            test.info("Term CheckBox was already clicked");
+        }
+    } catch (Exception e) {
+        failCase("Term CheckBox not locateable", "TermCheckBoxFail");
+    }
+}
+
+
+    public void ConfirmOrderButton() throws IOException {
+        test.info("Click On Confirm Order Button");
+        try {
+            if (ConFirmOrderButton.isDisplayed()) {
+                ConFirmOrderButton.click();
+                sleep();
+                passCase("Place Order Button Clicked");
+                passCaseWithSC("Place Order Button Clicked", "ConFirmOrderButtonPass");
+            }
+
+        } catch (Exception e) {
+            failCase("Place Order Button not locateable", "ConFirmOrderButtonFail");
+        }
+        sleep();
+    }
+
+
+
+
+
+
 
 
 }

@@ -60,6 +60,29 @@ public class CommonMethods extends BaseDriver {
         PageDriver.getCurrentDriver().navigate().to(url);
     }
 
+    /************************************************
+     * Handle Select Tag Related Element Task *
+     *
+     * @param element locator of Select tag *
+     * @param value   attribute value of option tag *
+     ************************************************
+     */
+
+    public void selectItemByValue(WebElement element, String value) {
+        Select selectItems = new Select(element);
+        selectItems.selectByValue(value);
+    }
+
+    public void selectItemByVisibleText(WebElement element, String value) {
+        Select selectItems = new Select(element);
+        selectItems.selectByVisibleText(value);
+    }
+
+    public void selectItemByIndex(WebElement element, int index) {
+        Select selectItems = new Select(element);
+        selectItems.selectByIndex(index);
+    }
+
     /*************************
      * Input Utilities *
      *************************/

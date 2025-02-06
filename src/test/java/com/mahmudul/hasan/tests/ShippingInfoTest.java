@@ -42,6 +42,81 @@ public class ShippingInfoTest extends BaseDriver {
         PhoneNumberGiven.PhoneNumberGiven();
     }
 
+    @Test(priority = 2)
+    public void AlterNativePhoneNum() throws IOException {
+        childTest = parentTest
+                .createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Provide Alternative Phone Number</b></p>");
+        ShippingInfoPage AlterNativePhoneNum = new ShippingInfoPage(childTest);
+        AlterNativePhoneNum.AlternativePhoneNumberGiven();
+    }
+
+    @Test(priority = 3)
+    public void CountryDropDown() throws IOException {
+        childTest = parentTest
+                .createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Provide Country</b></p>");
+        ShippingInfoPage CountryDropDown = new ShippingInfoPage(childTest);
+        CountryDropDown.CountrySelected();
+    }
+
+
+    @Test(priority = 4)
+    public void CityDropDown() throws IOException {
+        childTest = parentTest
+                .createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Provide City</b></p>");
+        ShippingInfoPage CityDropDown = new ShippingInfoPage(childTest);
+        CityDropDown.CityDropDown();
+    }
+    @Test(priority = 5)
+    public void AreaDropDown() throws IOException {
+        childTest = parentTest
+                .createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Provide Area</b></p>");
+        ShippingInfoPage AreaDropDown = new ShippingInfoPage(childTest);
+        AreaDropDown.AreaDropDown();
+    }
+
+    @Test (priority = 6)
+    public void ZoneDropDown() throws IOException {
+        childTest = parentTest
+                .createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Provide Zone</b></p>");
+        ShippingInfoPage ZoneDropDown = new ShippingInfoPage(childTest);
+        ZoneDropDown.ZoneDropDown();
+    }
+
+    @Test (priority = 7)
+    public void AddressGiven() throws IOException {
+        childTest = parentTest
+                .createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Provide Address</b></p>");
+        ShippingInfoPage AddressGiven = new ShippingInfoPage(childTest);
+        AddressGiven.AddressInputField();
+    }
+
+    @Test (priority = 8)
+    public void ClickOnBkashCheckBox() throws IOException {
+        childTest = parentTest
+                .createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Click On Bkash CheckBox</b></p>");
+        ShippingInfoPage ClickOnBkashCheckBox = new ShippingInfoPage(childTest);
+        ClickOnBkashCheckBox.ClickOnBkashCheckBox();
+    }
+
+
+
+    @Test (priority = 9)
+    public void ClickOnTerm() throws IOException {
+        childTest = parentTest
+                .createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Click On Term</b></p>");
+        ShippingInfoPage ClickOnTerm = new ShippingInfoPage(childTest);
+        ClickOnTerm.ClickOnTerm();
+    }
+
+    @Test(priority = 10)
+    public void ClickOnPlaceOrder() throws IOException {
+        childTest = parentTest
+                .createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Click On Place Order</b></p>");
+        ShippingInfoPage ClickOnPlaceOrder = new ShippingInfoPage(childTest);
+        ClickOnPlaceOrder.ConfirmOrderButton();
+    }
+
+
 
     @AfterClass
     public void afterClass() {
