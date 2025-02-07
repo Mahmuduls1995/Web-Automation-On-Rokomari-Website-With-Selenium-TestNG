@@ -20,8 +20,8 @@ public class ShippingInfoTest extends BaseDriver {
 //Sheikhmahmudul95@gmail.com   mahmud1995
     @BeforeClass
     public void Parent() throws InterruptedException {
-        PageDriver.getCurrentDriver().get(ShippingUrl);
-        Thread.sleep(9000);
+//        PageDriver.getCurrentDriver().get(ShippingUrl);
+//        Thread.sleep(9000);
         report = ExtendFactory.getInstance();
         parentTest = report.createTest("<p style=\"color:DarkBlue; font-size:20px\"><b>Shipping Information</b></p>")
                 .assignAuthor("QA TEAM").assignDevice("Windows");

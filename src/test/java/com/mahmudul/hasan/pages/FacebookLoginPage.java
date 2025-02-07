@@ -106,64 +106,6 @@ public class FacebookLoginPage extends CommonMethods {
 
 
 
-//    public void Facebooklogin() throws IOException {
-//
-//        try {
-//            // Switch to the Facebook popup window
-//            String mainWindow = PageDriver.getCurrentDriver().getWindowHandle();
-//            for (String windowHandle : PageDriver.getCurrentDriver().getWindowHandles()) {
-//                if (!windowHandle.equals(mainWindow)) {
-//                    PageDriver.getCurrentDriver().switchTo().window(windowHandle);
-//                    break;
-//                }
-//            }
-//
-//
-//            excelutils.ReadExcel();
-//            test.info("Please enter the email or phone number");
-//            if (number.isDisplayed()) {
-//                number.sendKeys(ExcelUtils.number);
-//                passCase("email entered successfully");
-//                Thread.sleep(5000);
-//                try {
-//                    test.info("Please enter the password");
-//                    System.out.println(password.isDisplayed());
-//                    if (password.isDisplayed()) {
-//                        password.sendKeys(ExcelUtils.password);
-//                        passCase("Password entered successfully");
-//                        Thread.sleep(5000);
-//                        try {
-//                            test.info("Please click the login button");
-//                            if (login_button.isDisplayed()) {
-//                                login_button.click();
-//                                Thread.sleep(5000);
-//                                passCaseWithSC("You successfully logged in", "login_success");
-//                            } else {
-//                                failCase("Login button not found", "login_button_not_found");
-//                            }
-//                        } catch (Exception e) {
-//                            failCase("Login button not found", "login_button_not_found");
-//                        }
-//                    } else {
-//                        failCase("Password field not found", "password_field_not_found");
-//                    }
-//                } catch (Exception e) {
-//                    failCase("Password field not found", "password_field_not_found");
-//                }
-//
-//            }
-//
-//        } catch (Exception e) {
-//
-//
-//            failCase("Email field not found", "email_field_not_found");
-//        }
-//
-//
-//    }
-
-
-
 
 
 

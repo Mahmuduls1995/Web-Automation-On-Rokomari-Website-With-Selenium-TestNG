@@ -19,10 +19,11 @@ public class AddToCartTest extends BaseDriver {
 
     @BeforeClass
     public void startUrl(){
-        PageDriver.getCurrentDriver().get(UrlCart);
+//        PageDriver.getCurrentDriver().get(UrlCart);
         report = ExtendFactory.getInstance();
         parentTest = report.createTest("<p style=\"color:DarkBlue; font-size:20px\"><b>Add To Cart</b></p>")
                 .assignAuthor("QA TEAM").assignDevice("Windows");
+
     }
 
     @Test(priority = 0)

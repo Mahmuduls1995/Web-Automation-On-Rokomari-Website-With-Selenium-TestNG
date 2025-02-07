@@ -12,6 +12,7 @@ public class BaseDriver {
     public static String Url = "https://www.rokomari.com";
     public static String UrlCart = "https://www.rokomari.com/book/author/1/humayun-ahmed?xyz=&sort=SOLD_COUNT_DESC&categoryIds=677&categoryIds=910&priceRange=0to45100&discountRange=0to30";
     public static String ShippingUrl = "https://www.rokomari.com/app/shipping?isgift=0&isShowShippingInCartPage=&selectedAddressId=&areaId=";
+    public static String Urllogin = "https://www.rokomari.com/login";
     public static WebDriver driver;
 
 
@@ -19,6 +20,7 @@ public class BaseDriver {
     public void startBrowser() {
         // Define a string variable to specify the browser name
         String browser_name = "chrome";
+//        String browser_name = "edge";
 
         // Check if the specified browser is "chrome"
         if (browser_name.equals("chrome")) {
@@ -35,7 +37,16 @@ public class BaseDriver {
             driver = new FirefoxDriver();
             // Maximize the browser window
             driver.manage().window().maximize();
-        } else {
+        }else if (browser_name.equals("edge")) {
+            // Set up the Edge WebDriver using WebDriverManager
+            WebDriverManager.edgedriver().setup();
+            // Initialize the EdgeDriver instance
+            driver = new EdgeDriver();
+            // Maximize the browser window
+            driver.manage().window().maximize();
+        }
+
+        else {
             // Set up the Edge WebDriver using WebDriverManager
             WebDriverManager.edgedriver().setup();
             // Initialize the EdgeDriver instance

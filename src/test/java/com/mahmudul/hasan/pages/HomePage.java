@@ -32,6 +32,7 @@ public class HomePage extends CommonMethods {
     @FindBys({
             @FindBy(xpath = "//button[contains(@class, 'btn-social-facebook')]"),
             @FindBy(xpath = "//button[contains(@onclick, 'callFacebookLogin')]")
+//            @FindBy(xpath = "//button[contains(@onclick, 'callGoogleLogin()')]")
 
     })
     WebElement Facebook;

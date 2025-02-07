@@ -39,6 +39,7 @@ public class HomePageTest extends BaseDriver {
         HomePage homePage = new HomePage(childTest);
         homePage.ClickOnFacebookButton();
     }
+
     @Test(priority = 2)
     public void Facebook_login() throws IOException {
         childTest = parentTest.createNode("<p style=\"color:DarkBlue; font-size:20px\"><b>Completed Facebook Login</b></p>");
