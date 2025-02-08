@@ -10,9 +10,9 @@ import org.testng.annotations.BeforeSuite;
 
 public class BaseDriver {
     public static String Url = "https://www.rokomari.com";
-    public static String UrlCart = "https://www.rokomari.com/book/author/1/humayun-ahmed?xyz=&sort=SOLD_COUNT_DESC&categoryIds=677&categoryIds=910&priceRange=0to45100&discountRange=0to30";
-    public static String ShippingUrl = "https://www.rokomari.com/app/shipping?isgift=0&isShowShippingInCartPage=&selectedAddressId=&areaId=";
-    public static String Urllogin = "https://www.rokomari.com/login";
+//    public static String UrlCart = "https://www.rokomari.com/book/author/1/humayun-ahmed?xyz=&sort=SOLD_COUNT_DESC&categoryIds=677&categoryIds=910&priceRange=0to45100&discountRange=0to30";
+//    public static String ShippingUrl = "https://www.rokomari.com/app/shipping?isgift=0&isShowShippingInCartPage=&selectedAddressId=&areaId=";
+//    public static String Urllogin = "https://www.rokomari.com/login";
     public static WebDriver driver;
 
 
